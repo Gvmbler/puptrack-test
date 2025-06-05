@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "target": "esnext",                     // Deja esto como está para que el código se compile en ESNext.
+    "outDir": "./dist",                     // Donde se generará el código compilado.
+    "rootDir": "./src",                     // La raíz del código fuente.
+    "strict": true,                         // Activar todas las comprobaciones estrictas de tipos.
+    "esModuleInterop": true,                // Permite la interoperabilidad entre CommonJS y ES Modules.
+    "allowSyntheticDefaultImports": true,   // Permite las importaciones sintéticas de módulos.
+    "moduleResolution": "node",             // Resolver módulos como lo hace Node.js.
+    "forceConsistentCasingInFileNames": true, // Asegura que se use una convención consistente de mayúsculas/minúsculas en los nombres de archivos.
+    "skipLibCheck": true                    // Omitir comprobaciones de tipo en las bibliotecas.
+  },
+  "include": [
+    "src",                                  // Incluir todos los archivos dentro de `src`.
+    ".expo/types/**/*.ts",                  // Incluir tipos de Expo.
+    "expo-env.d.ts"                         // Incluir las definiciones de Expo.
+  ],
+  "exclude": [
+    "node_modules",                         // Excluir `node_modules`.
+    "dist",                                 // Excluir los archivos ya compilados en `dist`.
+    "**/*.spec.ts"                          // Excluir archivos de prueba.
+  ],
+  "extends": "expo/tsconfig.base",           // Extiende la configuración base de Expo.
+  "references": [
+    { "path": "./tsconfig.node.json" }       // Agregar referencia para un archivo tsconfig específico para Node.js.
+  ]
+}
